@@ -107,8 +107,19 @@ Este projeto demonstra competências iniciais em:
 
 ---
 
+## 🚀 Como Executar o Projeto
+
+Para reproduzir esta análise em seu computador, siga os passos abaixo:
+
+1. **Clone ou baixe este repositório** para uma pasta local.
+2. Certifique-se de ter o **R** e o **RStudio** instalados.
+3. Certifique-se de que o arquivo de dados `smoking_health_data_final.csv` esteja na **mesma pasta** do script `.R`.
+4. Instale as dependências necessárias executando o comando abaixo no console do R:
+   ```R
+   install.packages("tidyverse")
+5. Abra o arquivo analise-tabagismo-sexo-r.R no RStudio e execute as linhas de código.
+
 ## 👤 Autor
 
 **Inácio Vieira** Graduando em Enfermagem — UFMG  
 Foco em **Análise de Dados em Saúde** - LinkedIn: [inaciosantosvieira](https://www.linkedin.com/in/inaciosantosvieira/)  
-- GitHub: [inaciovieiraa](https://github.com/inaciovieiraa)
