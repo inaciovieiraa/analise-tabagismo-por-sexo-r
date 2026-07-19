@@ -78,6 +78,9 @@ dados_limpos |>
        y = "MÉDIA DE CIGARROS / DIA") +
   theme_minimal()
 
+#4.1_ Salvar o gráfico automaticamente na pasta plots:
+ggsave("plots/consumo_sexo.png", plot = grafico_sexo, width = 6, height = 4, dpi = 300)
+
 
     
 
