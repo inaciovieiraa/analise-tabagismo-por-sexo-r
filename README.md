@@ -87,9 +87,9 @@ Após o tratamento estatístico na linguagem R, os dados foram conectados ao Mic
 
 ---
 
-## 🏆 Principais Resultados
+## 🏆 Principais Resultados:
 
-### 1. Perfil de Consumo dos Fumantes (A Realidade do Vício)
+### 1. Perfil de Consumo dos Fumantes (A Realidade do Vício):
 Ao analisar exclusivamente fumantes ativos — isolando o viés populacional de quem não fuma —, observou-se uma severidade de consumo significativamente maior:
 * **Homens:** Média de **22,11 cigarros/dia** (Perfil pesado)
 * **Mulheres:** Média de **13,91 cigarros/dia** (Perfil moderado)
@@ -100,14 +100,14 @@ Ao analisar exclusivamente fumantes ativos — isolando o viés populacional de 
 
 ---
 
-### 2. Impacto Geral na Frequência Cardíaca
+### 2. Impacto Geral na Frequência Cardíaca:
 A primeira validação clínica do estudo confirmou que a presença do tabagismo ativo está diretamente associada a uma elevação da frequência cardíaca basal da amostra.
 
 ![Impacto Geral do Tabagismo na FC](./plots/impacto_geral_fc.png)
 
 ---
 
-### 3. Carga Tabágica e Frequência Cardíaca (Efeito Dose-Resposta)
+### 3. Carga Tabágica e Frequência Cardíaca (Efeito Dose-Resposta):
 A estratificação dos indivíduos por intensidade de consumo revelou um aumento progressivo da frequência cardíaca média conforme cresce a exposição ao tabaco, demonstrando um salto clínico importante a partir do consumo moderado. 
 
 *(Embora esta seja uma análise descritiva, os resultados confirmam o efeito estimulante da nicotina e a relação de dose-resposta sobre o sistema miocárdico).*
@@ -116,7 +116,7 @@ A estratificação dos indivíduos por intensidade de consumo revelou um aumento
 
 ---
 
-### 4. Diferenças entre Homens e Mulheres (Fisiologia vs. Reatividade)
+### 4. Diferenças entre Homens e Mulheres (Fisiologia vs. Reatividade):
 A análise estratificada cruzando sexo, carga tabágica e batimentos cardíacos mostrou comportamentos fisiológicos distintos:
 * **Linha de Base Anatômica:** Mulheres apresentaram frequência cardíaca média superior em todas as categorias (padrão fisiológico coerente com o menor volume sistólico basal do coração feminino).
 * **Reatividade Masculina:** Homens exibiram um aumento absoluto quase **duas vezes maior** na frequência cardíaca entre o estado basal e o grupo de tabagismo pesado (+3,97 bpm nos homens contra +2,02 bpm nas mulheres).
