@@ -64,7 +64,7 @@ write_excel_csv2(dados_limpos, "data/dados_fumo_tratados_excel.csv")
 
 # 4. Gerando o gráfico de comparação do consumo médio por sexo (usando a base limpa):
 
-dados_limpos |>
+grafico_sexo <- dados_limpos |>
   filter(FUMANTE == "SIM") |> 
   group_by(SEXO) |>
   summarise(media_cigarros = mean(CIGARROS_DIA, na.rm = TRUE)) |>
