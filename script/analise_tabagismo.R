@@ -1,7 +1,7 @@
 #1. Carregando pacote e dados:
 
 library(tidyverse)
-dados_fumo <- read.csv("C:/Users/conta/OneDrive/Área de Trabalho/smoking_health_data_final.csv")
+dados_fumo <- read.csv("data/smoking_health_data_final.csv")
 
 #2. Limpeza dos dados: 
 
@@ -60,7 +60,7 @@ dados_limpos <- dados_fumo |>
          FREQ_CARDIACA, SISTÓLICO, DIASTÓLICO, COLESTEROL = chol)
 
 #3. Exportando a base limpa para a criação de dashboard no Excel:
-write_excel_csv2(dados_limpos, "dados_fumo_tratados_excel.csv")
+write_excel_csv2(dados_limpos, "data/dados_fumo_tratados_excel.csv")
 
 # 4. Gerando o gráfico de comparação do consumo médio por sexo (usando a base limpa):
 
