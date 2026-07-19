@@ -154,7 +154,6 @@ O pipeline executará o processamento estatístico de forma 100% autônoma, real
 1. **ETL Completo:** Leitura, higienização de strings e padronização das variáveis na base bruta;
 2. **Complete-Case Analysis:** Remoção cirúrgica de valores ausentes (`NA`) para preservação das médias;
 3. **Engenharia de Dados:** Exportação automática da base tratada (`dados_fumo_tratados_excel.csv`) diretamente para a pasta `/data`;
-4. **Visualização:** Geração e salvamento automatizado do gráfico de consumo por sexo (`consumo_sexo.png`) na pasta `/plots` com resolução de 300 DPI.
 
 ### 5. Exploração Interativa no Microsoft Excel:
 Na pasta `/data`, além do arquivo bruto necessário para rodar o script no R, você também encontrará a base tratada já pronta para uso (`dados_fumo_tratados_excel.csv`).
