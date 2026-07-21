@@ -14,7 +14,7 @@ Este projeto surgiu a partir de uma análise exploratória desenvolvida durante 
 
 Inicialmente, o objetivo era apenas comparar o número médio de cigarros consumidos por homens e mulheres. Entretanto, durante a exploração da base de dados, percebi que ela continha informações capazes de responder perguntas muito mais interessantes do ponto de vista epidemiológico e clínico.
 
-Por esse motivo, decidi reconstruir a análise utilizando uma abordagem mais completa e estruturada: combinei o poder da linguagem **R** para o tratamento pesado e preparação dos dados (*Data Wrangling*) com a flexibilidade do **Microsoft Excel** para exploração analítica visual e construção de dashboards.
+Por esse motivo, decidi reconstruir a análise utilizando uma abordagem mais completa e estruturada: combinei a linguagem R para o pipeline de limpeza e transformação dos dados com o Microsoft Excel para exploração analítica, construção de dashboards e visualização dos resultados.
 
 O resultado foi um estudo que investiga como diferentes níveis de exposição ao tabagismo podem estar relacionados a alterações da frequência cardíaca basal e como esse comportamento fisiológico varia entre homens e mulheres.
 
@@ -24,7 +24,7 @@ O resultado foi um estudo que investiga como diferentes níveis de exposição a
 
 Avaliar o impacto do tabagismo sobre indicadores cardiovasculares utilizando técnicas de análise exploratória de dados (EDA). O estudo procura responder três perguntas principais:
 
-1. Existe uma relação direta entre a carga tabágica e a aceleração da frequência cardíaca?
+1. Existe associação entre a carga tabágica e a frequência cardíaca basal?
 2. Homens e mulheres apresentam padrões diferentes de consumo e resposta cardiovascular ao vício?
 3. Como a interpretação epidemiológica muda quando analisamos apenas fumantes ativos em vez da população geral?
 
@@ -43,7 +43,7 @@ Avaliar o impacto do tabagismo sobre indicadores cardiovasculares utilizando té
 Este projeto utiliza programação estatística orientada a dados para extrair insights e modelar o risco clínico:
 * **Fonte dos Dados:** Base clínica de saúde pública (Kaggle).
 * **Linguagem Principal:** `R`
-* **Limpeza e Manipulação de Dados:** `dplyr` / `tidyr` / `stringr` (Ecossistema `tidyverse` para higienização de strings, fatoração de categorias clínicas e remoção cirúrgica de valores ausentes).
+* **Limpeza e Manipulação de Dados:** `dplyr` / `tidyr` / `stringr` (Ecossistema `tidyverse` para higienização de strings, fatoração de categorias clínicas e tratamento de valores ausentes (NA)).
 * **Visualização Estatística:** `ggplot2` (Geração de gráfico comparativo de consumo por sexo com exportação automatizada via `ggsave`).
 * **Análise Exploratória e BI:** `Microsoft Excel` (Uso de Tabelas Dinâmicas, segmentação de dados e modelagem de painéis comparativos para avaliação de efeito dose-resposta).
 
@@ -71,7 +71,7 @@ Foi desenvolvido um script rigoroso para preparação dos dados utilizando o eco
 
 **Principais etapas:**
 * Importação e higienização da base de dados bruta.
-* **Tratamento de valores ausentes (*Complete-Case Analysis*):** Remoção de fumantes ativos que não informaram a quantidade consumida (`NA`), garantindo a pureza do grupo controle e evitando distorções nas médias.
+* **Aplicação de uma estratégia de Complete-Case Analysis:** Removendo fumantes ativos com quantidade diária de cigarros não informada (NA).
 * Padronização de strings e conversão de tipos numéricos.
 * **Engenharia de Variáveis (*Feature Engineering*):**
   * Separação da coluna de pressão arterial em variáveis contínuas independentes (`SISTÓLICO` e `DIASTÓLICO`).
@@ -101,7 +101,7 @@ Ao analisar exclusivamente fumantes ativos, isolando o viés populacional de que
 ---
 
 ### 2. Impacto Geral na Frequência Cardíaca:
-A primeira validação clínica do estudo confirmou que a presença do tabagismo ativo está diretamente associada a uma elevação da frequência cardíaca basal da amostra.
+Na base analisada observou-se uma frequência cardíaca média superior entre fumantes quando comparados aos não fumantes.
 
 ![Impacto Geral do Tabagismo na FC](./plots/impacto_geral_fc.png)
 
@@ -110,7 +110,7 @@ A primeira validação clínica do estudo confirmou que a presença do tabagismo
 ### 3. Carga Tabágica e Frequência Cardíaca (Efeito Dose-Resposta):
 A estratificação dos indivíduos por intensidade de consumo revelou um aumento progressivo da frequência cardíaca média conforme cresce a exposição ao tabaco, demonstrando um salto clínico importante a partir do consumo moderado. 
 
-*(Embora esta seja uma análise descritiva, os resultados confirmam o efeito estimulante da nicotina e a relação de dose-resposta sobre o sistema miocárdico).*
+*(Embora esta seja uma análise descritiva, os resultados apresentam um comportamento compatível com o efeito fisiológico esperado da nicotina descrito na literatura.).*
 
 ![Correlação Carga Tabágica vs FC](./plots/correlacao_carga_fc.png)
 
@@ -118,9 +118,9 @@ A estratificação dos indivíduos por intensidade de consumo revelou um aumento
 
 ### 4. Diferenças entre Homens e Mulheres (Fisiologia vs. Reatividade):
 A análise estratificada cruzando sexo, carga tabágica e batimentos cardíacos mostrou comportamentos fisiológicos distintos:
-* **Linha de Base Anatômica:** Mulheres apresentaram frequência cardíaca média superior em todas as categorias (padrão fisiológico coerente com o menor volume sistólico basal do coração feminino).
+* **Linha de Base Anatômica:** Mulheres apresentaram frequência cardíaca média superior em todas as categorias (comportamento compatível com diferenças fisiológicas descritas na literatura).
 * **Reatividade Masculina:** Homens exibiram um aumento absoluto quase **duas vezes maior** na frequência cardíaca entre o estado basal e o grupo de tabagismo pesado (+3,97 bpm nos homens contra +2,02 bpm nas mulheres).
-* **Viés de Confusão no Grupo Leve:** Foi observado que fumantes leves apresentaram médias ligeiramente inferiores às dos não fumantes. Epidemiologicamente, isso indica a presença de fatores de confusão na amostra (como idade mais avançada ou sedentarismo concentrados no grupo "Não Fumante"), o que abre uma excelente oportunidade para investigações em análises multivariadas futuras.
+* **Viés de Confusão no Grupo Leve:** Foi observado que fumantes leves apresentaram médias ligeiramente inferiores às dos não fumantes. Epidemiologicamente, isso indica a presença de fatores de confusão na amostra (como idade mais avançada ou sedentarismo concentrados no grupo "Não Fumante"), o que abre uma excelente oportunidade para investigações em análises multivariadas futuras. Esses fatores não foram controlados nesta análise, representando uma limitação do estudo.
 
 ![FC por Carga Tabágica e Sexo](./plots/fc_carga_sexo.png)
 
@@ -160,6 +160,17 @@ O pipeline executará o processamento estatístico de forma 100% autônoma, real
 Na pasta `/data`, além do arquivo bruto necessário para rodar o script no R, você também encontrará a base tratada já pronta para uso (`dados_fumo_tratados_excel.csv`).
 
 Caso queira focar apenas na modelagem de negócios sem precisar executar a programação em R, basta abrir essa base tratada diretamente no **Microsoft Excel** para interagir com as Tabelas Dinâmicas, segmentadores de dados (*Slicers*) e explorar os painéis visualmente.
+
+---
+
+## ⚠️ Limitações
+
+Como se trata de uma análise exploratória utilizando uma base pública secundária, algumas limitações devem ser consideradas:
+
+- Trata-se de um estudo observacional e descritivo.
+- Não foram realizados testes de hipótese ou modelos de regressão.
+- Possíveis fatores de confusão (idade, colesterol, hipertensão, etc.) não foram controlados nesta etapa.
+- Os resultados representam associações observadas nesta amostra e não permitem inferir causalidade.
 
 ---
 
