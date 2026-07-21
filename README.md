@@ -90,7 +90,7 @@ Após o tratamento estatístico na linguagem R, os dados foram conectados ao Mic
 ## 🏆 Principais Resultados:
 
 ### 1. Perfil de Consumo dos Fumantes (A Realidade do Vício):
-Ao analisar exclusivamente fumantes ativos — isolando o viés populacional de quem não fuma —, observou-se uma severidade de consumo significativamente maior:
+Ao analisar exclusivamente fumantes ativos, isolando o viés populacional de quem não fuma, observou-se uma severidade de consumo significativamente maior:
 * **Homens:** Média de **22,11 cigarros/dia** (Perfil pesado)
 * **Mulheres:** Média de **13,91 cigarros/dia** (Perfil moderado)
 
